@@ -33,7 +33,7 @@
 			case 1:
 				//pelicula
 				echo "<h1>Peliculas</h1>";
-				$query="SELECT * FROM pelicula";
+				$query="SELECT * FROM pelicula;";
 				break;
 			case 2:
 				//personaje
