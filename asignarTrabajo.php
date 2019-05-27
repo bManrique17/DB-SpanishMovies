@@ -86,7 +86,11 @@
 							}
 							
 							if(isset($_POST['Crear'])){									
-	
+								$p1 = "null";								
+								$p2 = (int)apcu_fetch('idPersonaje');								
+								$p3 = $_POST['a'];
+								$query = "CALL insertarTrabajo($p1,$p2,$p3);";
+								mysqli_query($conexion,$query);	
 							}
 							if(isset($_POST['Modificar'])){									
 								$p1 = $arrayTrabajos[(int)apcu_fetch('posActual')][0];												
