@@ -89,7 +89,7 @@
 							if(isset($_POST['Crear'])){									
 								$p1 = "null";
 								$p2 = $_POST['a'];
-								$p3 = (int)apcu_fetch('idCine');
+								$p3 = apcu_fetch('idCine');
 								$p4	= $_POST['b'];							
 								$query = "CALL insertarSala($p1,$p2,$p3,$p4);";
 								mysqli_query($conexion,$query);	
