@@ -92,7 +92,7 @@
 								$p3 = $_POST['a'];
 								$p4	= "'".$_POST['b']."'";								
 								$query = "CALL insertarSala($p1,$p2,$p3,$p4);";
-								mysqli_query($conexion,$query);	
+								echo mysqli_query($conexion,$query);
 							}
 							if(isset($_POST['Modificar'])){									
 								$p1 = $arraySalas[(int)apcu_fetch('posActual')][0];
