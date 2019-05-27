@@ -93,7 +93,7 @@
 								mysqli_query($conexion,$query);	
 							}
 							if(isset($_POST['Modificar'])){									
-								$p1 = "null";								
+								$p1 = $arrayTrabajos[(int)apcu_fetch('posActual')][0];												
 								$p2 = (int)apcu_fetch('idPersonaje');								
 								$p3 = $_POST['a'];							
 								$query = "CALL modificarTrabajo($p1,$p2,$p3);";
