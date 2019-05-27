@@ -88,14 +88,15 @@
 							
 							if(isset($_POST['Crear'])){									
 								$p1 = "null";
-								$p2 = '"'.apcu_fetch('idCine').'"';
+								$p2 = (int)apcu_fetch('idCine');
 								$p3 = $_POST['a'];
-								$p4	= $_POST['b'];							
+								$p4	= $_POST['b'];
+								echo $p1.$p2.$p3.$p4;
 								$query = "CALL insertarSala($p1,$p2,$p3,$p4);";
 								mysqli_query($conexion,$query);	
 							}
 							if(isset($_POST['Modificar'])){									
-								$p1 = "null";
+								$p1 = $arraySalas[(int)apcu_fetch('posActual')][0];
 								$p2 = $_POST['a'];
 								$p3 = $arraySalas[(int)apcu_fetch('posActual')][2];
 								$p4	= $_POST['b'];	
