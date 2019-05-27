@@ -184,8 +184,7 @@
 	
 	if(isset($_POST["Eliminar"])){	
 
-		$p1 = (int)$array[(int)apcu_fetch('posActual')][0];
-		echo $p1;
+		$p1 = (int)$array[(int)apcu_fetch('posActual')][0];		
 		switch($flag){
 			case 1:				
 				$query = "CALL eliminarPelicula($p1);";
