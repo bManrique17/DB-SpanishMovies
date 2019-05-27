@@ -33,7 +33,7 @@
 			case 1:
 				//pelicula
 				echo "<h1>Peliculas</h1>";
-				$query="SELECT * FROM pelicula;";
+				$query="SELECT * FROM pelicula";
 				break;
 			case 2:
 				//personaje
@@ -50,7 +50,7 @@
 				break;
 			case 5:
 				//festival
-				echo "<h1>Festivales</h1>";
+				echo "<h1>Festivales</h1>";				
 				$query="SELECT * FROM festival";
 				break;
 			case 6:
@@ -78,8 +78,8 @@
 	<?php
 	if(isset($_POST["Modificar"])){						
 		switch($flag){
-			case 1:											
-				$p1 = "null";
+			case 1:	
+				$p1 = (int)$array[(int)apcu_fetch('posActual')][0];				
 				$p2 = '"'.$_POST["a"].'"';					
 				$p3 = '"'.$_POST["b"].'"';
 				$p4 = (int)$_POST["c"];
@@ -91,7 +91,7 @@
 				mysqli_query($conexion,$query);								
 				break;																																
 			case 2:
-				$p1 = "null";
+				$p1 = (int)$array[(int)apcu_fetch('posActual')][0];
 				$p2 = '"'.$_POST["a"].'"';					
 				$p3 = '"'.$_POST["b"].'"';
 				$p4 = '"'.$_POST["c"].'"';	
@@ -103,7 +103,7 @@
 				
 				break;							
 			case 4:
-				$p1 = "null";
+				$p1 = (int)$array[(int)apcu_fetch('posActual')][0];
 				$p2 = '"'.$_POST["a"].'"';					
 				$p3 = '"'.$_POST["b"].'"';
 				$p4 = '"'.$_POST["c"].'"';	
@@ -111,14 +111,14 @@
 				mysqli_query($conexion,$query);
 				break;
 			case 5:
-				$p1 = "null";				
+				$p1 = (int)$array[(int)apcu_fetch('posActual')][0];				
 				$p2 = '"'.$_POST["a"].'"';
 				$p3 = (int)$_POST["b"];	
 				$query = "CALL modificarFestival($p1,$p2,$p3);";									
 				mysqli_query($conexion,$query);
 				break;
 			case 6:
-				$p1 = "null";
+				$p1 = (int)$array[(int)apcu_fetch('posActual')][0];
 				$p2 = '"'.$_POST["a"].'"';					
 				$p3 = '"'.$_POST["b"].'"';
 				$query = "CALL modificarPremio($p1,$p2,$p3);";									
@@ -420,7 +420,7 @@
 			<br>
 			
 			<form action="index.php" method="post">
-				<button type="submit" name="btn_volver" class="btn btn-primary">Volver</button>	
+				<button type="submit" name="btn_volver" class="btn btn-primary">Volver</button>					
 			</form>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
