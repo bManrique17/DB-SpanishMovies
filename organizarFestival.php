@@ -231,6 +231,9 @@
 				
             ?>
 			<br>
+			<form>
+				<button type="submit" name="btn_actualizar" class="btn btn-primary">Actualizar</button>					
+			</form>			
 			<form action="index.php" method="post">
 				<button type="submit" name="btn_volver" class="btn btn-primary">Volver</button>	
 			</form>
