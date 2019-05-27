@@ -203,13 +203,12 @@
 							
 							$query2='SELECT `NombreCine` FROM `sala` WHERE `IdSala`='.$arrayProyecciones[$posActual][1].';';							
 							$query22 = mysqli_query($conexion,$query2);
-														
-							
+																					
 							$query='SELECT `NombreCine` FROM `cine` WHERE `IdCine`='.(int)(mysqli_fetch_row($query22))[0].';';							
 							$nombreCine = mysqli_query($conexion,$query);									
 							
 							echo "<div class=input-group-prepend>
-									<span class=input-group-text id=basic-addon1>Nombre de la Sala</span>										
+									<span class=input-group-text id=basic-addon1>Nombre del cine</span>										
 									<input type=text name=a2 value=".(mysqli_fetch_row($nombreCine))[0]." class=form-control aria-describedby=basic-addon1>										
 								</div>";								
 							echo "<div class=input-group-prepend>
