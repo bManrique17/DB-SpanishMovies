@@ -90,14 +90,14 @@
 								$p1 = "null";
 								$p2 = (int)apcu_fetch('idCine');
 								$p3 = $_POST['a'];
-								$p4	= (string)$_POST['b'];								
+								$p4	= $_POST['b'];								
 								$query = "CALL insertarSala($p1,$p2,$p3,$p4);";
 								mysqli_query($conexion,$query);
 							}
 							if(isset($_POST['Modificar'])){									
 								$p1 = $arraySalas[(int)apcu_fetch('posActual')][0];
-								$p2 = $_POST['a'];
-								$p3 = $arraySalas[(int)apcu_fetch('posActual')][2];
+								$p2 = $arraySalas[(int)apcu_fetch('posActual')][1];
+								$p3 = $_POST['a'];								
 								$p4	= $_POST['b'];	
 								$query = "CALL modificarSala($p1,$p2,$p3,$p4);";
 								mysqli_query($conexion,$query);	
