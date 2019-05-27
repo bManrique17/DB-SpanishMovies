@@ -86,11 +86,7 @@
 							}
 							
 							if(isset($_POST['Crear'])){									
-								$p1 = "null";								
-								$p2 = (int)apcu_fetch('idPersonaje');								
-								$p3 = $_POST['a'];
-								$query = "CALL insertarTrabajo($p1,$p2,$p3);";
-								mysqli_query($conexion,$query);	
+	
 							}
 							if(isset($_POST['Modificar'])){									
 								$p1 = $arrayTrabajos[(int)apcu_fetch('posActual')][0];												
@@ -152,7 +148,7 @@
 							$personaje = mysqli_query($conexion,$query);
 						
 							echo "<div class=input-group-prepend>
-									<span class=input-group-text id=basic-addon1>Descripcion del trabajo (puesto)</span>										
+									<span class=input-group-text id=basic-addon1>Puesto</span>										
 									<input type=text name=a value=".$arrayTrabajos[$posActual][2]." class=form-control aria-describedby=basic-addon1>										
 								</div>";
 							if(!$personaje){
