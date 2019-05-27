@@ -124,7 +124,7 @@
 								mysqli_query($conexion,$query);	
 							}
 							if(isset($_POST['Modificar'])){									
-								$p1 = "null";
+								$p1 = $arrayProyecciones[(int)apcu_fetch('posActual')][0];
 								$p2 = $arrayProyecciones[(int)apcu_fetch('posActual')][1];
 								$p3 = $arrayProyecciones[(int)apcu_fetch('posActual')][2];
 								$p4 = $_POST['a'];								

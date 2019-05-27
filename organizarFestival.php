@@ -98,7 +98,7 @@
 								mysqli_query($conexion,$query);	
 							}
 							if(isset($_POST['Modificar'])){									
-								$p1 = "null";
+								$p1 = $arrayCertamenes[(int)apcu_fetch('posActual')][0];
 								$p2 = $_POST['a'];
 								$p3 = $arrayCertamenes[(int)apcu_fetch('posActual')][2];								
 								$query = "CALL modificarCertamen($p1,$p2,$p3);";
