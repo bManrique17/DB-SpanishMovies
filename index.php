@@ -14,7 +14,7 @@
     <h1>Peliculas Españolas Lorena's Cinema</h1>
 	<h1>Administracion</h1>
 	<p>Escoja su opción</p>
-	
+	<?php apcu_clear_cache();?>
 	<form action="CRUD.php" method="post">				
 		
 			<button type="submit" name="boton" value = "1" class="btn btn-primary btn-lg btn-block">Peliculas</button>
