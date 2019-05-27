@@ -91,7 +91,7 @@
 								$p2 = (int)apcu_fetch('idCine');
 								$p3 = $_POST['a'];
 								$p4	= $_POST['b'];								
-								$query = 'insert into sala values (1,2,"q","a")';
+								$query = "CALL insertarSala($p1,$p2,$p3,$p4);";
 								mysqli_query($conexion,$query);
 							}
 							if(isset($_POST['Modificar'])){									
