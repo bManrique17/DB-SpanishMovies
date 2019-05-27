@@ -91,7 +91,7 @@
 								$p2 = (int)apcu_fetch('idCine');
 								$p3 = $_POST['a'];
 								$p4	= (string)$_POST['b'];
-								echo $p1." -- ".$p1." -- ".$p1." -- ".$p1;
+								echo $p1." -- ".$p2." -- ".$p3." -- ".$p4;
 								$query = "CALL insertarSala($p1,$p2,$p3,$p3);";
 								mysqli_query($conexion,$query);
 							}
