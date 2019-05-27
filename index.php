@@ -11,7 +11,7 @@
     <title>Peliculas Españolas</title>
   </head>
   <body>
-    <h1>Peliculas Españolas El Quijote</h1>
+    <h1>Peliculas Españolas Lorena's Cinema</h1>
 	<h1>Administracion</h1>
 	<p>Escoja su opción</p>
 	
