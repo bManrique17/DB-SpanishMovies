@@ -88,7 +88,7 @@
 							
 							if(isset($_POST['Crear'])){									
 								$p1 = "null";
-								$p2 = (string)apcu_fetch('idCine');
+								$p2 = '"'.apcu_fetch('idCine').'"';
 								$p3 = $_POST['a'];
 								$p4	= $_POST['b'];							
 								$query = "CALL insertarSala($p1,$p2,$p3,$p4);";
