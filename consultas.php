@@ -113,34 +113,64 @@
 		//consultas
 		switch($flag){
 			case 1:
-				//$query="SELECT * FROM reconocimiento";
+				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
+						WHERE (trabajo.Tarea = "Actor Principal" or trabajo.Tarea = "Director" or trabajo.Tarea="Actor Secundario")
+						group by Nombre_persona,CIP
+						HAVING COUNT(*)>1;';
 				break;
 			case 2:
-				echo "<p></p>";
+				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
+						WHERE (trabajo.Tarea = "Actor Principal" or trabajo.Tarea = "Director" or trabajo.Tarea="Actor Secundario")
+						group by Nombre_persona,CIP
+						HAVING COUNT(*)>1;';
 				break;
 			case 3:
-				echo "<p></p>";
+				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
+						WHERE (trabajo.Tarea = "Actor Principal" or trabajo.Tarea = "Director" or trabajo.Tarea="Actor Secundario")
+						group by Nombre_persona,CIP
+						HAVING COUNT(*)>1;';
 				break;
 			case 4:
-				echo "<p></p>";
+				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
+						WHERE (trabajo.Tarea = "Actor Principal" or trabajo.Tarea = "Director" or trabajo.Tarea="Actor Secundario")
+						group by Nombre_persona,CIP
+						HAVING COUNT(*)>1;';
 				break;
 			case 5:
-				echo "<p></p>";
+				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
+						WHERE (trabajo.Tarea = "Actor Principal" or trabajo.Tarea = "Director" or trabajo.Tarea="Actor Secundario")
+						group by Nombre_persona,CIP
+						HAVING COUNT(*)>1;';
 				break;
 			case 6:
-				echo "<p></p>";
+				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
+						WHERE (trabajo.Tarea = "Actor Principal" or trabajo.Tarea = "Director" or trabajo.Tarea="Actor Secundario")
+						group by Nombre_persona,CIP
+						HAVING COUNT(*)>1;';
 				break;			
 			case 7:
-				echo "<p></p>";
+				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
+						WHERE (trabajo.Tarea = "Actor Principal" or trabajo.Tarea = "Director" or trabajo.Tarea="Actor Secundario")
+						group by Nombre_persona,CIP
+						HAVING COUNT(*)>1;';
 				break;
 			case 8:
-				echo "<p></p>";
+				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
+						WHERE (trabajo.Tarea = "Actor Principal" or trabajo.Tarea = "Director" or trabajo.Tarea="Actor Secundario")
+						group by Nombre_persona,CIP
+						HAVING COUNT(*)>1;';
 				break;
 			case 9:
-				echo "<p></p>";
+				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
+						WHERE (trabajo.Tarea = "Actor Principal" or trabajo.Tarea = "Director" or trabajo.Tarea="Actor Secundario")
+						group by Nombre_persona,CIP
+						HAVING COUNT(*)>1;';
 				break;
 			case 10:
-				echo "<p></p>";
+				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
+						WHERE (trabajo.Tarea = "Actor Principal" or trabajo.Tarea = "Director" or trabajo.Tarea="Actor Secundario")
+						group by Nombre_persona,CIP
+						HAVING COUNT(*)>1;';
 				break;
 		}		
 		$resultados=mysqli_query($conexion,$query);			
