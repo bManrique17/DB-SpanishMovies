@@ -430,8 +430,8 @@
 											<input type=text name=b value=".'"'.$array[$posActual][2].'"'." class=form-control aria-describedby=basic-addon1>
 										</div>";
 									echo "<div class=input-group-prepend>
-											<span class=input-group-text id=basic-addon1>Foro</span>
-											<input type=text name=b value=".'"'.$array[$posActual][3].'"'." class=form-control aria-describedby=basic-addon1>
+											<span class=input-group-text id=basic-addon1>Aforo</span>
+											<input type=text name=c value=".'"'.$array[$posActual][3].'"'." class=form-control aria-describedby=basic-addon1>
 										</div>";
 									break;
 							};
