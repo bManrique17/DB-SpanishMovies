@@ -69,8 +69,7 @@
 		$cont = 0;
 		while(($fila=mysqli_fetch_row($resultados))){
 			for ($i = 0; $i <count($fila); $i++) {				
-				$array[$cont][$i] = $fila[$i];		
-				echo $array[$cont][$i]."-----";
+				$array[$cont][$i] = $fila[$i];						
 			}		
 			$cont++;
 		}		
@@ -243,14 +242,18 @@
 						<?php
 							if($array[0][0] != 1){
 								
-													
+								$asdas = 1;				
 								for ($i = 0; $i <count($array); $i++) {																										
 									echo "<form method=post>";
 										switch($flag){																															
-											case 1:											
+											case 1:													
 												echo "<input type=submit name=".$i." value=".$array[$i][2]." class=list-group-item list-group-item-action>";
 												break;
-											case 2:											
+											case 2:	
+												if($asdas == 1){
+													echo $array[$i][1]."-----";
+													$asdas = 0
+												}
 												echo "<input type=submit name=".$i." value=".$array[$i][1]." class=list-group-item list-group-item-action>";
 												break;
 											case 3:											
