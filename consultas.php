@@ -179,7 +179,7 @@
 		$cont = 1;
 		echo "nooo";
 		while(($fila=mysqli_fetch_row($resultados))){			
-			
+			echo "FUMAR";
 			echo "<tr>
 					<th scope=row>".$cont."</th>";					
 			for ($i = 1; $i <count($fila); $i++) {														
