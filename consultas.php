@@ -177,7 +177,7 @@
 		echo "HOLAAAA";
 		$resultados=mysqli_query($conexion,$query);			
 		$cont = 1;
-		echo $resultados;
+		echo "nooo";
 		while(($fila=mysqli_fetch_row($resultados))){			
 			
 			echo "<tr>
