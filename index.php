@@ -24,7 +24,20 @@
 			<button type="submit" name="boton" value = "6" class="btn btn-primary btn-lg btn-block">Premios</button>
 			<button type="submit" name="boton" value = "7" class="btn btn-primary btn-lg btn-block">Salas</button>						
     </form>
-	
+	<h2>Consultas</h2>
+	<p>Escoja su opción</p>
+	<form action="consultas.php" method="post">						
+			<button type="submit" name="boton" value = "1" class="btn btn-primary btn-lg btn-block">Consulta 1</button>		
+			<button type="submit" name="boton" value = "2" class="btn btn-primary btn-lg btn-block">Consulta 2</button>				
+			<button type="submit" name="boton" value = "3" class="btn btn-primary btn-lg btn-block">Consulta 3</button>					  
+			<button type="submit" name="boton" value = "4" class="btn btn-primary btn-lg btn-block">Consulta 4</button>								
+			<button type="submit" name="boton" value = "5" class="btn btn-primary btn-lg btn-block">Consulta 5</button>
+			<button type="submit" name="boton" value = "6" class="btn btn-primary btn-lg btn-block">Consulta 6</button>
+			<button type="submit" name="boton" value = "7" class="btn btn-primary btn-lg btn-block">Consulta 7</button>						
+			<button type="submit" name="boton" value = "8" class="btn btn-primary btn-lg btn-block">Consulta 8</button>
+			<button type="submit" name="boton" value = "9" class="btn btn-primary btn-lg btn-block">Consulta 9</button>
+			<button type="submit" name="boton" value = "10" class="btn btn-primary btn-lg btn-block">Consulta 10</button>			
+    </form>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

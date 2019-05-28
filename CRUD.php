@@ -81,10 +81,10 @@
 	campos de texto y presione 'modificar'. Para eliminar, seleccione un item y presione 'Eliminar'.
   </p>	
 	<?php
-	if(isset($_POST["Modificar"])){						
+	if(isset($_POST["Modificar"])){	
+		$p1 = (int)$array[(int)apcu_fetch('posActual')][0];
 		switch($flag){
-			case 1:	
-				$p1 = (int)$array[(int)apcu_fetch('posActual')][0];				
+			case 1:															
 				$p2 = '"'.$_POST["a"].'"';					
 				$p3 = '"'.$_POST["b"].'"';
 				$p4 = (int)$_POST["c"];
@@ -93,48 +93,51 @@
 				$p7 = (int)$_POST["f"];		
 				$p8 = (int)$_POST["g"];				
 				$query = "CALL modificarPelicula($p1,$p2,$p3,$p4,$p5,$p6,$p7,$p8);";								
-				mysqli_query($conexion,$query);								
 				break;																																
-			case 2:
-				$p1 = (int)$array[(int)apcu_fetch('posActual')][0];
+			case 2:				
 				$p2 = '"'.$_POST["a"].'"';					
 				$p3 = '"'.$_POST["b"].'"';
 				$p4 = '"'.$_POST["c"].'"';	
 				$query = "CALL modificarPersonaje($p1,$p2,$p3,$p4);";									
-				mysqli_query($conexion,$query);	
-				break;
-				
-			case 3:
-				
+				break;				
+			case 3:				
+				$p2 = '"'.$_POST["a"].'"';					
+				$p3 = '"'.$_POST["b"].'"';
+				$p4 = '"'.$_POST["c"].'"';	
+				$query = "CALL modificarTrabajo($p1,$p2,$p3,$p4);";									
 				break;							
-			case 4:
-				$p1 = (int)$array[(int)apcu_fetch('posActual')][0];
+			case 4:				
 				$p2 = '"'.$_POST["a"].'"';					
 				$p3 = '"'.$_POST["b"].'"';
 				$p4 = '"'.$_POST["c"].'"';	
 				$query = "CALL modificarCine($p1,$p2,$p3,$p4);";									
-				mysqli_query($conexion,$query);
 				break;
-			case 5:
-				$p1 = (int)$array[(int)apcu_fetch('posActual')][0];				
+			case 5:						
 				$p2 = '"'.$_POST["a"].'"';
-				$p3 = (int)$_POST["b"];	
-				$query = "CALL modificarFestival($p1,$p2,$p3);";									
-				mysqli_query($conexion,$query);
+				$p3 = '"'.$_POST["b"].'"';
+				$p4 = '"'.$_POST["c"].'"';
+				$p5 = '"'.$_POST["d"].'"';
+				$p6 = (int)$_POST["e"];
+				$p7 = (int)$_POST["f"];
+				$p8 = (int)$_POST["g"];
+				$query = "CALL modificarProyeccion($p1,$p2,$p3,$p4,$p5,$p6,$p7,$p8);";													
 				break;
-			case 6:
-				$p1 = (int)$array[(int)apcu_fetch('posActual')][0];
+			case 6:				
 				$p2 = '"'.$_POST["a"].'"';					
 				$p3 = '"'.$_POST["b"].'"';
-				$query = "CALL modificarPremio($p1,$p2,$p3);";									
-				mysqli_query($conexion,$query);					
+				$query = "CALL modificarPremio($p1,$p2,$p3);";																
 				break;
-			default:
+			case 7:				
+				$p2 = '"'.$_POST["a"].'"';					
+				$p3 = '"'.$_POST["b"].'"';
+				$p4 = '"'.$_POST["c"].'"';	
+				$query = "CALL modificarSala($p1,$p2,$p3,$p4);";												
 				break;
-		}								
+		}
+		mysqli_query($conexion,$query);		
 	}
 	
-		if(isset($_POST["Crear"])){						
+	if(isset($_POST["Crear"])){						
 		switch($flag){
 			case 1:											
 				$p1 = "null";
@@ -146,7 +149,6 @@
 				$p7 = (int)$_POST["f"];		
 				$p8 = (int)$_POST["g"];				
 				$query = "CALL insertarPelicula($p1,$p2,$p3,$p4,$p5,$p6,$p7,$p8);";								
-				mysqli_query($conexion,$query);								
 				break;																																
 			case 2:
 				$p1 = "null";
@@ -154,11 +156,13 @@
 				$p3 = '"'.$_POST["b"].'"';
 				$p4 = '"'.$_POST["c"].'"';	
 				$query = "CALL insertarPersonaje($p1,$p2,$p3,$p4);";									
-				mysqli_query($conexion,$query);	
-				break;
-				
+				break;				
 			case 3:
-				
+				$p1 = "null";
+				$p2 = '"'.$_POST["a"].'"';					
+				$p3 = '"'.$_POST["b"].'"';
+				$p4 = '"'.$_POST["c"].'"';	
+				$query = "CALL insertarTrabajo($p1,$p2,$p3,$p4);";									
 				break;							
 			case 4:
 				$p1 = "null";
@@ -166,29 +170,36 @@
 				$p3 = '"'.$_POST["b"].'"';
 				$p4 = '"'.$_POST["c"].'"';	
 				$query = "CALL insertarCine($p1,$p2,$p3,$p4);";									
-				mysqli_query($conexion,$query);
 				break;
 			case 5:
 				$p1 = "null";				
 				$p2 = '"'.$_POST["a"].'"';
-				$p3 = (int)$_POST["b"];	
-				$query = "CALL insertarFestival($p1,$p2,$p3);";									
-				mysqli_query($conexion,$query);
+				$p3 = '"'.$_POST["b"].'"';
+				$p4 = '"'.$_POST["c"].'"';
+				$p5 = '"'.$_POST["d"].'"';
+				$p6 = (int)$_POST["e"];
+				$p7 = (int)$_POST["f"];
+				$p8 = (int)$_POST["g"];
+				$query = "CALL insertarProyeccion($p1,$p2,$p3,$p4,$p5,$p6,$p7,$p8);";													
 				break;
 			case 6:
 				$p1 = "null";
 				$p2 = '"'.$_POST["a"].'"';					
 				$p3 = '"'.$_POST["b"].'"';
-				$query = "CALL insertarPremio($p1,$p2,$p3);";									
-				mysqli_query($conexion,$query);					
+				$query = "CALL insertarPremio($p1,$p2,$p3);";																
 				break;
-			default:
+			case 7:
+				$p1 = "null";
+				$p2 = '"'.$_POST["a"].'"';					
+				$p3 = '"'.$_POST["b"].'"';
+				$p4 = '"'.$_POST["c"].'"';	
+				$query = "CALL insertarSala($p1,$p2,$p3,$p4);";												
 				break;
-		}								
+		}
+		mysqli_query($conexion,$query);		
 	}
 	
 	if(isset($_POST["Eliminar"])){	
-
 		$p1 = (int)$array[(int)apcu_fetch('posActual')][0];		
 		switch($flag){
 			case 1:				
@@ -198,18 +209,19 @@
 				$query = "CALL eliminarPersonaje($p1);";
 				break;
 			case 3:				
-
+				$query = "CALL eliminarTrabajo($p1);";
 				break;
 			case 4:				
 				$query = "CALL eliminarCine($p1);";
 				break;
 			case 5:				
-				$query = "CALL eliminarFestival($p1);";
+				$query = "CALL eliminarProyeccion($p1);";
 				break;
 			case 6:				
 				$query = "CALL eliminarPremio($p1);";
 				break;			
-			default:
+			case 7:
+				$query = "CALL eliminarSala($p1);";
 				break;
 		}																
 		mysqli_query($conexion,$query);	
@@ -240,18 +252,19 @@
 												echo "<input type=submit name=".$i." value=".$array[$i][1]." class=list-group-item list-group-item-action>";
 												break;
 											case 3:											
-												
+												echo "<input type=submit name=".$i." value=".$array[$i][1]." class=list-group-item list-group-item-action>";
 												break;
 											case 4:											
 												echo "<input type=submit name=".$i." value=".$array[$i][1]." class=list-group-item list-group-item-action>";
 												break;
 											case 5:											
-												echo "<input type=submit name=".$i." value=".$array[$i][1]." class=list-group-item list-group-item-action>";
+												echo "<input type=submit name=".$i." value=".$array[$i][3].":".$array[$i][1].":".$array[$i][2]." class=list-group-item list-group-item-action>";
 												break;
 											case 6	:											
 												echo "<input type=submit name=".$i." value=".$array[$i][1]." class=list-group-item list-group-item-action>";
 												break;
-											default:
+											case 7:
+												echo "<input type=submit name=".$i." value=".$array[$i][2].":".$array[$i][1]." class=list-group-item list-group-item-action>";
 												break;
 										}								
 									echo "</form>";
@@ -481,3 +494,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
+
