@@ -11,45 +11,19 @@
     <title>Peliculas Españolas</title>
   </head>
   <body>
-    <h1>Peliculas Españolas Lorena's Cinema</h1>
-	<h1>Administracion</h1>
+    <h1>Waldina's Cinema</h1>
+	<h2>Administracion</h2>
 	<p>Escoja su opción</p>
 	<?php apcu_clear_cache();?>
-	<form action="CRUD.php" method="post">				
-		
-			<button type="submit" name="boton" value = "1" class="btn btn-primary btn-lg btn-block">Peliculas</button>
-		
-			<button type="submit" name="boton" value = "2" class="btn btn-primary btn-lg btn-block">Personajes</button>
-				
-			<button type="submit" name="boton" value = "4" class="btn btn-primary btn-lg btn-block">Cines</button>
-		
-			<button type="submit" name="boton" value = "5" class="btn btn-primary btn-lg btn-block">Festivales</button>
-	   
-			<button type="submit" name="boton" value = "6" class="btn btn-primary btn-lg btn-block">Premios</button>					
-			
+	<form action="CRUD.php" method="post">						
+			<button type="submit" name="boton" value = "1" class="btn btn-primary btn-lg btn-block">Peliculas</button>		
+			<button type="submit" name="boton" value = "2" class="btn btn-primary btn-lg btn-block">Personajes</button>				
+			<button type="submit" name="boton" value = "3" class="btn btn-primary btn-lg btn-block">Trabajos</button>					  
+			<button type="submit" name="boton" value = "4" class="btn btn-primary btn-lg btn-block">Cines</button>								
+			<button type="submit" name="boton" value = "5" class="btn btn-primary btn-lg btn-block">Proyecciones</button>
+			<button type="submit" name="boton" value = "6" class="btn btn-primary btn-lg btn-block">Premios</button>
+			<button type="submit" name="boton" value = "7" class="btn btn-primary btn-lg btn-block">Salas</button>						
     </form>
-	<h1>Organizacion</h1>
-	<p>Escoja su opción</p>
-	
-	<form action="organizarFestival.php" method="post">
-		<button type="submit" name="boton" value = "1" class="btn btn-primary btn-lg btn-block">Organizar Festival</button>
-	</form>
-	<br>
-	<form action="agregarSala.php" method="post">
-		<button type="submit" name="boton" value = "1" class="btn btn-primary btn-lg btn-block">Agregar Sala</button>
-	</form>
-	<br>
-	<form action="asignarTrabajo.php" method="post">
-		<button type="submit" name="boton" value = "1" class="btn btn-primary btn-lg btn-block">Asignar Trabajo</button>
-	</form>
-	<br>	
-	<form action="organizarProyeccion.php" method="post">
-		<button type="submit" name="boton" value = "1" class="btn btn-primary btn-lg btn-block">Organizar Proyeccion</button>
-	</form>
-	<br>
-	<form action="entregarReconocimiento.php" method="post">
-		<button type="submit" name="boton" value = "1" class="btn btn-primary btn-lg btn-block">Entregar Reconocimiento</button>
-	</form>
 	
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

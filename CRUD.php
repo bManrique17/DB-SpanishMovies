@@ -23,8 +23,7 @@
 		$db_usuario="root";
 		$db_contra="";
 		
-		$array[0][0] = 1;
-		
+		$array[0][0] = 1;		
 		
 		$conexion=mysqli_connect($db_host,$db_usuario,$db_contra,$db_nombre);
 		mysqli_set_charset($conexion,"utf8");
@@ -41,7 +40,8 @@
 				$query="SELECT * FROM personaje";	
 				break;
 			case 3:
-
+				echo "<h1>Trabajos</h1>";
+				$query="SELECT * FROM trabajo";	
 				break;
 			case 4:
 				//cine
@@ -50,14 +50,19 @@
 				break;
 			case 5:
 				//festival
-				echo "<h1>Festivales</h1>";				
-				$query="SELECT * FROM festival";
+				echo "<h1>Proyecciones</h1>";				
+				$query="SELECT * FROM proyeccion";
 				break;
 			case 6:
 				//premio
 				echo "<h1>Premios</h1>";
 				$query="SELECT * FROM premio";
 				break;						
+			case 7:
+				//premio
+				echo "<h1>Sala</h1>";
+				$query="SELECT * FROM sala";
+				break;
 		};
 		$resultados=mysqli_query($conexion,$query);						
 		$cont = 0;
@@ -278,10 +283,8 @@
 								case 1:
 									//pelicula
 									echo "<div class=input-group-prepend>
-											<span class=input-group-text id=basic-addon1>CIP</span>
-											
-											<input type=text name=a value=".$array[$posActual][1]." class=form-control aria-describedby=basic-addon1>
-											
+											<span class=input-group-text id=basic-addon1>CIP</span>											
+											<input type=text name=a value=".$array[$posActual][1]." class=form-control aria-describedby=basic-addon1>											
 										</div>";
 									echo "<div class=input-group-prepend>
 											<span class=input-group-text id=basic-addon1>Titulo</span>
@@ -324,8 +327,19 @@
 										</div>";
 									break;
 								case 3:
-									//certamen
-							
+									//trabajo
+									echo "<div class=input-group-prepend>
+											<span class=input-group-text id=basic-addon1>CIP</span>
+											<input type=text id=a name=a value=".$array[$posActual][1]." class=form-control aria-describedby=basic-addon1>
+										</div>";
+									echo "<div class=input-group-prepend>
+											<span class=input-group-text id=basic-addon1>Nombre</span>
+											<input type=text name=b value=".$array[$posActual][2]." class=form-control aria-describedby=basic-addon1>
+										</div>";
+									echo "<div class=input-group-prepend>
+											<span class=input-group-text id=basic-addon1>Tarea</span>
+											<input type=text name=c value=".$array[$posActual][3]." class=form-control aria-describedby=basic-addon1>
+										</div>";																	
 									break;
 								case 4:
 									//cine
@@ -343,27 +357,62 @@
 										</div>";							
 									break;
 								case 5:
-									//festival
+									//proyeccion
 									echo "<div class=input-group-prepend>
-											<span class=input-group-text id=basic-addon1>Nombre</span>
-											<input type=text id=a name=a value=".$array[$posActual][1]." class=form-control aria-describedby=basic-addon1>
+											<span class=input-group-text id=basic-addon1>Cine</span>
+											<input type=text name=a value=".$array[$posActual][1]." class=form-control aria-describedby=basic-addon1>
 										</div>";
 									echo "<div class=input-group-prepend>
-											<span class=input-group-text id=basic-addon1>Fundacion</span>
+											<span class=input-group-text id=basic-addon1>Sala</span>
 											<input type=text name=b value=".$array[$posActual][2]." class=form-control aria-describedby=basic-addon1>
+										</div>";
+									echo "<div class=input-group-prepend>
+											<span class=input-group-text id=basic-addon1>CIP</span>
+											<input type=text name=c value=".$array[$posActual][3]." class=form-control aria-describedby=basic-addon1>
+										</div>";
+									echo "<div class=input-group-prepend>
+											<span class=input-group-text id=basic-addon1>Fecha de estreno</span>
+											<input type=text name=d value=".$array[$posActual][4]." class=form-control aria-describedby=basic-addon1>
+										</div>";
+									echo "<div class=input-group-prepend>
+											<span class=input-group-text id=basic-addon1>Dias de estreno</span>
+											<input type=text name=e value=".$array[$posActual][5]." class=form-control aria-describedby=basic-addon1>
+										</div>";
+									echo "<div class=input-group-prepend>
+											<span class=input-group-text id=basic-addon1>Espectadores</span>
+											<input type=text name=f value=".$array[$posActual][6]." class=form-control aria-describedby=basic-addon1>
+										</div>";
+									echo "<div class=input-group-prepend>
+											<span class=input-group-text id=basic-addon1>Recaudacion</span>
+											<input type=text name=g value=".$array[$posActual][7]." class=form-control aria-describedby=basic-addon1>
 										</div>";
 									break;
 								case 6:
 									//premio
 									echo "<div class=input-group-prepend>
-											<span class=input-group-text id=basic-addon1>Nombre</span>
+											<span class=input-group-text id=basic-addon1>Premio</span>
 											<input type=text id=a name=a value=".$array[$posActual][1]." class=form-control aria-describedby=basic-addon1>
 										</div>";
 									echo "<div class=input-group-prepend>
 											<span class=input-group-text id=basic-addon1>Tarea</span>
 											<input type=text name=b value=".$array[$posActual][2]." class=form-control aria-describedby=basic-addon1>
 										</div>";
-									break;						
+									break;	
+								case 7:
+									//sala
+									echo "<div class=input-group-prepend>
+											<span class=input-group-text id=basic-addon1>Cine</span>
+											<input type=text id=a name=a value=".$array[$posActual][1]." class=form-control aria-describedby=basic-addon1>
+										</div>";
+									echo "<div class=input-group-prepend>
+											<span class=input-group-text id=basic-addon1>Sala</span>
+											<input type=text name=b value=".$array[$posActual][2]." class=form-control aria-describedby=basic-addon1>
+										</div>";
+									echo "<div class=input-group-prepend>
+											<span class=input-group-text id=basic-addon1>Foro</span>
+											<input type=text name=b value=".$array[$posActual][3]." class=form-control aria-describedby=basic-addon1>
+										</div>";
+									break;
 							};
 						?>
 						<br>
