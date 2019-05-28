@@ -133,7 +133,7 @@
 						  AND tarea   <> 'Director'
 						  AND Tint.cip =Trabajo.cip
 						  )";
-				break;
+				break;				
 			case 2:
 				$query="SELECT distinct titulo_p as Pelicula, festival, ano_produccion as Año, Premio
 						FROM (Trabajo natural join Pelicula), Otorgo
@@ -148,10 +148,10 @@
 				$query="SELECT distinct titulo_p as Titulo,ano_produccion as Fecha_Produccion FROM Pelicula where presupuesto>6000;";
 				break;
 			case 5:
-				$query="SELECT distinct cine,count(Sala) as Salas 
-						FROM Sala
+				$query="SELECT distinct Cine as NombreCine,count(Sala) as NumSalas  
+						FROM Cine NATURAL JOIN Sala
 						WHERE ciudad_cine='Madrid'
-						group by cine;";
+						group by Cine;";
 				break;
 			case 6:
 				$query="select distinct festival,R.premio,Reconocimiento.certamen from Reconocimiento, 
