@@ -150,6 +150,7 @@
 			case 5:
 				$query="SELECT distinct cine,count(Sala) as Salas 
 						FROM Sala
+						WHERE ciudad_cine='Madrid'
 						group by cine;";
 				break;
 			case 6:
