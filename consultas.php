@@ -119,10 +119,20 @@
 		//consultas
 		switch($flag){
 			case 1:							
-				$query="SELECT Pelicula.titulo_p,Pelicula.ano_produccion,Trabajo.Nombre_persona FROM Pelicula natural join Trabajo
-						WHERE (Trabajo.Tarea = 'Actor Principal' or Trabajo.Tarea = 'Director' or Trabajo.Tarea='Actor Secundario')
-						group by Nombre_persona,CIP
-						HAVING COUNT(*)>1;";
+				$query="SELECT DISTINCT titulo_p,
+						  ano_produccion AS Fecha,
+						  nombre_persona
+						FROM Trabajo,
+						Pelicula
+						WHERE Pelicula.cip  =Trabajo.cip
+						AND tarea           ='Director'
+						AND nombre_persona IN
+						  (SELECT nombre_persona
+						  FROM Trabajo Tint
+						  WHERE tarea <> 'Productor'
+						  AND tarea   <> 'Director'
+						  AND Tint.cip =Trabajo.cip
+						  )";
 				break;
 			case 2:
 				$query="SELECT distinct titulo_p as Pelicula, festival, ano_produccion as Año, Premio
