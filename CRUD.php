@@ -240,20 +240,14 @@
                         </p>
                                                 
 						<?php
-							if($array[0][0] != 1){
-								
-								$asdas = 1;				
+							if($array[0][0] != 1){																
 								for ($i = 0; $i <count($array); $i++) {																										
 									echo "<form method=post>";
 										switch($flag){																															
 											case 1:													
 												echo "<input type=submit name=".$i." value=".$array[$i][2]." class=list-group-item list-group-item-action>";
 												break;
-											case 2:	
-												if($asdas == 1){
-													echo $array[$i][1]."-----";
-													$asdas = 0;
-												}
+											case 2:													
 												echo "<input type=submit name=".$i." value=".$array[$i][1]." class=list-group-item list-group-item-action>";
 												break;
 											case 3:											
