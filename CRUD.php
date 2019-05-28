@@ -251,7 +251,7 @@
 									echo "<form method=post>";
 										switch($flag){																															
 											case 1:													
-												echo "<input type=submit name=".$i." value=".$array[$i][2]." class=list-group-item list-group-item-action>";
+												echo "<input type=submit name=".$i." value=".'"'.$array[$i][2].'"'." class=list-group-item list-group-item-action>";
 												break;
 											case 2:													
 												echo '<input type=submit name='.$i.' value='.'"'.$array[$i][1].'"'.' class=list-group-item list-group-item-action>';
