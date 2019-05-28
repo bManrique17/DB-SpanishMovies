@@ -245,13 +245,13 @@
                         <p>Seleccione
                         </p>
                                                 
-						<?php
-							if($array[0][0] != 1){																
-								for ($i = 0; $i <count($array); $i++) {																										
+						<?php							
+							if($array[0][0] != 1){																								
+								for ($i = 0; $i <count($array); $i++) {	
+									ECHO "FOOOCK";
 									echo "<form method=post>";
 										switch($flag){																															
-											case 1:	
-												ECHO "QUEEE";
+											case 1:													
 												echo "<input type=submit name=".$i." value="."'".$array[$i][2]."'"." class=list-group-item list-group-item-action>";
 												break;
 											case 2:													
