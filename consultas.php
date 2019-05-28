@@ -22,6 +22,9 @@
 		$db_usuario="root";
 		$db_contra="";
 		
+		$conexion=mysqli_connect($db_host,$db_usuario,$db_contra,$db_nombre);
+		mysqli_set_charset($conexion,"utf8");
+		
 		switch($flag){
 			case 1:
 				echo "<p>Obtener todas las peliculas en las que el director ha trabajado tambien como actor.</p>";
@@ -112,12 +115,11 @@
 		  <tbody>";
 		//consultas
 		switch($flag){
-			case 1:
-				$query = "SELECT * FROM Pelicula";
-				//$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
-				//		WHERE (trabajo.Tarea = "Actor Principal" or trabajo.Tarea = "Director" or trabajo.Tarea="Actor Secundario")
-				//		group by Nombre_persona,CIP
-				//		HAVING COUNT(*)>1;';
+			case 1:				
+				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
+						WHERE (trabajo.Tarea = "Actor Principal" or trabajo.Tarea = "Director" or trabajo.Tarea="Actor Secundario")
+						group by Nombre_persona,CIP
+						HAVING COUNT(*)>1;';
 				break;
 			case 2:
 				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
@@ -173,13 +175,10 @@
 						group by Nombre_persona,CIP
 						HAVING COUNT(*)>1;';
 				break;
-		}	
-		echo "HOLAAAA";
+		}			
 		$resultados=mysqli_query($conexion,$query);			
-		$cont = 1;
-		echo "nooo";
-		while(($fila=mysqli_fetch_row($resultados))){			
-			echo "FUMAR";
+		$cont = 1;		
+		while(($fila=mysqli_fetch_row($resultados))){						
 			echo "<tr>
 					<th scope=row>".$cont."</th>";					
 			for ($i = 1; $i <count($fila); $i++) {														
