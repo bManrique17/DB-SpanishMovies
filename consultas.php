@@ -113,7 +113,7 @@
 		//consultas
 		switch($flag){
 			case 1:
-				$query="SELECT * FROM reconocimiento";
+				//$query="SELECT * FROM reconocimiento";
 				break;
 			case 2:
 				echo "<p></p>";

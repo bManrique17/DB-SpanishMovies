@@ -32,36 +32,36 @@
 			case 1:
 				//pelicula
 				echo "<h1>Peliculas</h1>";
-				$query="SELECT * FROM pelicula";
+				$query="SELECT * FROM Pelicula";
 				break;
 			case 2:
 				//personaje
 				echo "<h1>Personajes</h1>";
-				$query="SELECT * FROM personaje";	
+				$query="SELECT * FROM Personaje";	
 				break;
 			case 3:
 				echo "<h1>Trabajos</h1>";
-				$query="SELECT * FROM trabajo";	
+				$query="SELECT * FROM Trabajo";	
 				break;
 			case 4:
 				//cine
 				echo "<h1>Cines</h1>";
-				$query="SELECT * FROM cine";
+				$query="SELECT * FROM Cine";
 				break;
 			case 5:
 				//festival
 				echo "<h1>Proyecciones</h1>";				
-				$query="SELECT * FROM proyeccion";
+				$query="SELECT * FROM Proyeccion";
 				break;
 			case 6:
 				//premio
 				echo "<h1>Premios</h1>";
-				$query="SELECT * FROM premio";
+				$query="SELECT * FROM Premio";
 				break;						
 			case 7:
 				//premio
 				echo "<h1>Sala</h1>";
-				$query="SELECT * FROM sala";
+				$query="SELECT * FROM Sala";
 				break;
 		};
 		$resultados=mysqli_query($conexion,$query);						
@@ -474,7 +474,6 @@
 						Eliminado con exito.
 					</div>
 					';
-
 				}
 				
             ?>
