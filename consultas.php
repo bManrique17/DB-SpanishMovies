@@ -115,12 +115,11 @@
 		  <tbody>";
 		//consultas
 		switch($flag){
-			case 1:				
-				$query='SELECT * FROM Pelicula';
-				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
-						WHERE (trabajo.Tarea = "Actor Principal" or trabajo.Tarea = "Director" or trabajo.Tarea="Actor Secundario")
+			case 1:							
+				$query="SELECT Pelicula.titulo_p,Pelicula.ano_produccion,Trabajo.Nombre_persona FROM Pelicula natural join Trabajo
+						WHERE (Trabajo.Tarea = 'Actor Principal' or Trabajo.Tarea = 'Director' or Trabajo.Tarea='Actor Secundario')
 						group by Nombre_persona,CIP
-						HAVING COUNT(*)>1;';
+						HAVING COUNT(*)>1;";
 				break;
 			case 2:
 				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
