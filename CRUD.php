@@ -13,6 +13,7 @@
   <body> 
 
 	<?php
+		
 		if(isset($_POST['boton'])){
 			apcu_store('flag', $_POST['boton']);
 		}
@@ -67,8 +68,9 @@
 		$resultados=mysqli_query($conexion,$query);						
 		$cont = 0;
 		while(($fila=mysqli_fetch_row($resultados))){
-			for ($i = 0; $i <count($fila); $i++) {		
-				$array[$cont][$i] = $fila[$i];			
+			for ($i = 0; $i <count($fila); $i++) {				
+				$array[$cont][$i] = $fila[$i];		
+				echo $array[$cont][$i]."-----";
 			}		
 			$cont++;
 		}		

@@ -16,7 +16,7 @@
 	<p>Escoja su opción</p>
 	<?php apcu_clear_cache();?>
 	<form action="CRUD.php" method="post">						
-			<button type="submit" name="boton" value = "1" class="btn btn-primary btn-lg btn-block">Pelicu  las</button>		
+			<button type="submit" name="boton" value = "1" class="btn btn-primary btn-lg btn-block">Peliculas</button>		
 			<button type="submit" name="boton" value = "2" class="btn btn-primary btn-lg btn-block">Personajes</button>				
 			<button type="submit" name="boton" value = "3" class="btn btn-primary btn-lg btn-block">Trabajos</button>					  
 			<button type="submit" name="boton" value = "4" class="btn btn-primary btn-lg btn-block">Cines</button>								
