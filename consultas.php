@@ -125,58 +125,55 @@
 						HAVING COUNT(*)>1;";
 				break;
 			case 2:
-				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
-						WHERE (trabajo.Tarea = "Actor Principal" or trabajo.Tarea = "Director" or trabajo.Tarea="Actor Secundario")
-						group by Nombre_persona,CIP
-						HAVING COUNT(*)>1;';
+				$query="SELECT distinct titulo_p as Pelicula, festival, ano_produccion as Año, Premio
+						FROM (Trabajo natural join Pelicula), Otorgo
+						where Nombre_persona='Isaac Hayes' and tarea='director' and Otorgo.cip=Trabajo.cip and festival='Oscars';";
 				break;
 			case 3:
-				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
-						WHERE (trabajo.Tarea = "Actor Principal" or trabajo.Tarea = "Director" or trabajo.Tarea="Actor Secundario")
-						group by Nombre_persona,CIP
-						HAVING COUNT(*)>1;';
+				$query="SELECT distinct Nombre_Persona,count(festival) as Numero 
+						FROM Reconocimiento natural join Trabajo where festival='Oscars' and (Tarea='Actor Principal')
+						group by Nombre_persona;";
 				break;
 			case 4:
-				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
-						WHERE (trabajo.Tarea = "Actor Principal" or trabajo.Tarea = "Director" or trabajo.Tarea="Actor Secundario")
-						group by Nombre_persona,CIP
-						HAVING COUNT(*)>1;';
+				$query="SELECT distinct titulo_p as Titulo,ano_produccion as Fecha_Produccion FROM Pelicula where presupuesto>6000;";
 				break;
 			case 5:
-				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
-						WHERE (trabajo.Tarea = "Actor Principal" or trabajo.Tarea = "Director" or trabajo.Tarea="Actor Secundario")
-						group by Nombre_persona,CIP
-						HAVING COUNT(*)>1;';
+				$query="SELECT distinct cine,count(Sala) as Salas 
+						FROM Sala
+						group by cine;";
 				break;
 			case 6:
-				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
-						WHERE (trabajo.Tarea = "Actor Principal" or trabajo.Tarea = "Director" or trabajo.Tarea="Actor Secundario")
-						group by Nombre_persona,CIP
-						HAVING COUNT(*)>1;';
+				$query="select distinct festival,R.premio,Reconocimiento.certamen from Reconocimiento, 
+						(select distinct premio,certamen from Reconocimiento where premio='Mejor actriz secundaria' and certamen = '1997') R
+						where Festival='Oscars' and Reconocimiento.certamen='1997'";
 				break;			
 			case 7:
-				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
-						WHERE (trabajo.Tarea = "Actor Principal" or trabajo.Tarea = "Director" or trabajo.Tarea="Actor Secundario")
-						group by Nombre_persona,CIP
-						HAVING COUNT(*)>1;';
+				$query="select distinct titulo_p,nacionalidad
+						from (SELECT distinct cine,cip,count(Sala) as Salas
+						FROM Proyeccion
+						group by cip,cine having Salas>1) E2 natural join Pelicula;";
 				break;
 			case 8:
-				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
-						WHERE (trabajo.Tarea = "Actor Principal" or trabajo.Tarea = "Director" or trabajo.Tarea="Actor Secundario")
-						group by Nombre_persona,CIP
-						HAVING COUNT(*)>1;';
+				$query="SELECT titulo_p,nombre_persona
+						FROM (SELECT cip,count(Nombre_persona) as Contar 
+						FROM Trabajo
+						where tarea='Actor Principal'
+						group by cip having Contar> 2 ) E1 natural join Pelicula natural join Trabajo;";
 				break;
 			case 9:
-				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
-						WHERE (trabajo.Tarea = "Actor Principal" or trabajo.Tarea = "Director" or trabajo.Tarea="Actor Secundario")
-						group by Nombre_persona,CIP
-						HAVING COUNT(*)>1;';
+				$query="Select titulo_p,nombre_persona
+						from (select  nombre_persona, count(tarea) as numero 
+						from Trabajo where tarea='Actor Principal'
+						group by nombre_persona
+						having Numero >3)F natural join Pelicula natural join Trabajo;";
 				break;
 			case 10:
-				$query='SELECT pelicula.titulo_p,pelicula.ano_produccion,trabajo.Nombre_persona FROM pelicula natural join trabajo
-						WHERE (trabajo.Tarea = "Actor Principal" or trabajo.Tarea = "Director" or trabajo.Tarea="Actor Secundario")
-						group by Nombre_persona,CIP
-						HAVING COUNT(*)>1;';
+				$query="SELECT distinct nombre_persona,nacionalidad,veces
+						FROM Trabajo, Pelicula,
+							(SELECT nombre_persona AS nombre, COUNT(tarea) AS veces FROM Trabajo WHERE tarea LIKE '%Actor%'
+							GROUP BY nombre_persona
+							) T WHERE Pelicula.cip=Trabajo.cip AND Trabajo.tarea ='Director' AND T.nombre      = Trabajo.nombre_persona
+							AND veces>2;";
 				break;
 		}			
 		$resultados=mysqli_query($conexion,$query);			
