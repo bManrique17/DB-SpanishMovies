@@ -73,8 +73,7 @@
 		};
 		$resultados=mysqli_query($conexion,$query);						
 		$cont = 0;
-		while(($fila=mysqli_fetch_row($resultados))){
-			echo "FUNMADR";
+		while(($fila=mysqli_fetch_row($resultados))){			
 			for ($i = 0; $i <count($fila); $i++) {				
 				$array[$cont][$i] = $fila[$i];						
 			}		
@@ -251,7 +250,8 @@
 								for ($i = 0; $i <count($array); $i++) {																										
 									echo "<form method=post>";
 										switch($flag){																															
-											case 1:													
+											case 1:	
+												ECHO "QUEEE";
 												echo "<input type=submit name=".$i." value="."'".$array[$i][2]."'"." class=list-group-item list-group-item-action>";
 												break;
 											case 2:													
