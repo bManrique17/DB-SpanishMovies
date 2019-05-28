@@ -269,7 +269,7 @@
 												echo "<input type=submit name=".$i." value=".'"'.$array[$i][1].'"'." class=list-group-item list-group-item-action>";
 												break;
 											case 7:
-												echo "<input type=submit name=".$i." value=".'"'.$array[$i][2].'"'.":".'"'.$array[$i][1].'"'." class=list-group-item list-group-item-action>";
+												echo "<input type=submit name=".$i." value=".'"'.$array[$i][1].'"'.':'.'"'.$array[$i][2].'"'.":".'"'.$array[$i][1].'"'." class=list-group-item list-group-item-action>";
 												break;
 										}								
 									echo "</form>";
