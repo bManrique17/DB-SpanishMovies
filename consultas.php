@@ -177,6 +177,7 @@
 		$resultados=mysqli_query($conexion,$query);			
 		$cont = 1;
 		while(($fila=mysqli_fetch_row($resultados))){			
+			echo $fila[$cont];
 			echo "<tr>
 					<th scope=row>".$cont."</th>";					
 			for ($i = 1; $i <count($fila); $i++) {														
