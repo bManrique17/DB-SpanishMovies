@@ -30,7 +30,7 @@
 		$db_usuario="root";
 		$db_contra="";
 		
-		$array[0][0] = 1;		
+		$array[0][0] = -1;		
 		
 		$conexion=mysqli_connect($db_host,$db_usuario,$db_contra,$db_nombre);
 		mysqli_set_charset($conexion,"utf8");
@@ -245,10 +245,9 @@
                         <p>Seleccione
                         </p>
                                                 
-						<?php							
-							if($array[0][0] != 1){																								
-								for ($i = 0; $i <count($array); $i++) {	
-									ECHO "FOOOCK";
+						<?php														
+							if($array[0][0] != -1){																								
+								for ($i = 0; $i <count($array); $i++) {										
 									echo "<form method=post>";
 										switch($flag){																															
 											case 1:													
