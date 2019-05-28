@@ -177,11 +177,11 @@
 				break;
 		}			
 		$resultados=mysqli_query($conexion,$query);			
-		$cont = 1;		
+		$cont = 0;		
 		while(($fila=mysqli_fetch_row($resultados))){						
 			echo "<tr>
 					<th scope=row>".$cont."</th>";					
-			for ($i = 1; $i <count($fila); $i++) {														
+			for ($i = 0; $i <count($fila); $i++) {														
 				echo "<td>".$fila[$i]."</td>";						
 			}																	
 			echo "</tr>";
