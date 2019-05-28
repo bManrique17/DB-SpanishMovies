@@ -256,20 +256,23 @@
 											case 2:													
 												echo '<input type=submit name='.$i.' value='.'"'.$array[$i][1].'"'.' class=list-group-item list-group-item-action>';
 												break;
-											case 3:											
-												echo "<input type=submit name=".$i." value=".'"'.$array[$i][1].'"'." class=list-group-item list-group-item-action>";
+											case 3:	
+												$info = $array[$i][2].':'.$array[$i][3];
+												echo "<input type=submit name=".$i." value=".'"'.$info.'"'." class=list-group-item list-group-item-action>";
 												break;
 											case 4:											
 												echo "<input type=submit name=".$i." value=".'"'.$array[$i][1].'"'." class=list-group-item list-group-item-action>";
 												break;
-											case 5:											
-												echo "<input type=submit name=".$i." value=".'"'.$array[$i][3].'":"'.$array[$i][1].'":"'.$array[$i][2].'"'." class=list-group-item list-group-item-action>";
+											case 5:			
+												$info = $array[$i][3].':'.$array[$i][1].':'.$array[$i][2];
+												echo "<input type=submit name=".$i." value=".'"'.$info.'"'." class=list-group-item list-group-item-action>";
 												break;
 											case 6	:											
 												echo "<input type=submit name=".$i." value=".'"'.$array[$i][1].'"'." class=list-group-item list-group-item-action>";
 												break;
 											case 7:
-												echo "<input type=submit name=".$i." value=".'"'.$array[$i][1].'":"'.$array[$i][2].'"'." class=list-group-item list-group-item-action>";
+												$info = $array[$i][1].':'.$array[$i][2];
+												echo "<input type=submit name=".$i." value=".'"'.$info.'"'." class=list-group-item list-group-item-action>";
 												break;
 										}								
 									echo "</form>";
