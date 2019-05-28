@@ -11,7 +11,7 @@
     <title>Peliculas Españolas</title>
   </head>
   <body>
-    <h1>Waldina's Cinema</h1>
+    <h1>Cinema Español</h1>
 	<h2>Administracion</h2>
 	<p>Escoja su opción</p>
 	<?php apcu_clear_cache();?>
