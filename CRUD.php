@@ -252,7 +252,7 @@
 											case 2:	
 												if($asdas == 1){
 													echo $array[$i][1]."-----";
-													$asdas = 0
+													$asdas = 0;
 												}
 												echo "<input type=submit name=".$i." value=".$array[$i][1]." class=list-group-item list-group-item-action>";
 												break;
