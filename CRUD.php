@@ -74,6 +74,7 @@
 		$resultados=mysqli_query($conexion,$query);						
 		$cont = 0;
 		while(($fila=mysqli_fetch_row($resultados))){
+			echo "FUNMADR";
 			for ($i = 0; $i <count($fila); $i++) {				
 				$array[$cont][$i] = $fila[$i];						
 			}		
